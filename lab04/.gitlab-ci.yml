@@ -1,0 +1,19 @@
+stages:
+  - verify
+  - compile
+  - build
+
+job_verify:
+  stage: verify
+  script:
+    - mvn clean install verify
+
+job_compile:
+  stage: compile
+  script:
+    - mvn compile
+
+job_build:
+  stage: build
+  script:
+    - mvn package
